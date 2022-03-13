@@ -2,11 +2,13 @@ import './filme-info.css';
 import { useParams, useHistory } from 'react-router-dom';
 import api from '../../services/api';
 import { useEffect, useState } from 'react';
+import { toast } from "react-toastify";
 
 
 export default function Filme() {
     const{ id } = useParams();
     const history = useHistory();
+  
 
     const [filme, setFilme] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -33,6 +35,25 @@ export default function Filme() {
 
     }, [history, id]);
 
+    function salvaFilme(){
+
+        const minhaLista = localStorage.getItem('filmes');
+
+        let filmesSalvos = JSON.parse(minhaLista) || [];
+
+        const hasFilme = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id)
+
+        if(hasFilme){
+            toast.info('Você já possui esse filme salvo!')
+            return;
+        }
+
+        filmesSalvos.push(filme);
+        localStorage.setItem('filmes', JSON.stringify(filmesSalvos));
+        toast.success('Filme salvo com sucesso!')
+
+    }
+
     if(loading){
         return(
             <div className='filme-info'>
@@ -48,7 +69,7 @@ export default function Filme() {
             <h3>Sinopse</h3>
             {filme.sinopse}
             <div>
-                <button onClick={()=>{}}>Salvar</button>
+                <button onClick={salvaFilme}>Salvar</button>
                 <button>
                     <a target="_blank" href={`https://youtube.com/results?search_query=${filme.nome} Trailer`}>
                     Trailer
