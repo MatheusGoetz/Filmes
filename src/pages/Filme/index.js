@@ -44,7 +44,7 @@ export default function Filme() {
         const hasFilme = filmesSalvos.some((filmeSalvo) => filmeSalvo.id === filme.id)
 
         if(hasFilme){
-            toast.info('Você já possui esse filme salvo!')
+            toast.error('Você já possui esse filme salvo!')
             return;
         }
 

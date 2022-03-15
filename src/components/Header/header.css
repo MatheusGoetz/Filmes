@@ -12,6 +12,9 @@ header{
     font-size: 30px;
     color: #fff;
     cursor: pointer;
+    text-shadow: 2px 1px 3px black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 
 }
 
@@ -23,4 +26,5 @@ header{
     padding: 5px;
     font-weight: bold;
     color: #000;
+    
 }

@@ -4,6 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-shadow: 2px 1px 3px gray;
 
 }
 
@@ -30,10 +31,19 @@ span{
 
 button{
     margin-left: 10px;
+    border: solid brown 2px;
+    border-radius: 5px;
+    color: brown;
+    
 
 }
 
 ul li div a{
     text-decoration: none;
     color: brown;
+    border: solid 2px brown;
+    border-radius: 5px;
+    background-color: #fff;
+
+
 }

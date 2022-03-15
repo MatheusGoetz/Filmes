@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     max-width: 900px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px 1px 1px gray;
 
 }
 
@@ -20,6 +22,7 @@
     outline: none;
     padding: 12px;
     transition: all 0.5s;
+    color: black;
     
 }
 
